@@ -12,10 +12,11 @@ abstract class EBillItemView : EpoxyModelWithHolder<Holder>() {
     @EpoxyAttribute lateinit var itemName : String
 
     @EpoxyAttribute
-    var itemPricePm : Int = 0
+    var itemPricePm : Float = 0f
 
     override fun bind(holder: Holder) {
         holder.itemNameView.text = itemName
+        holder.itemPricePmView.text = itemPricePm.toString()
     }
 
 }

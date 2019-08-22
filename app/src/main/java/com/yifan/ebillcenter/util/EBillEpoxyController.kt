@@ -1,9 +1,10 @@
 package com.yifan.ebillcenter.util
 
+import android.util.Log
 import com.airbnb.epoxy.AsyncEpoxyController
 import com.airbnb.epoxy.EpoxyController
 import com.airbnb.mvrx.MvRxState
-import com.yifan.ebillcenter.BaseFragment
+import com.yifan.ebillcenter.ui.BaseFragment
 import com.yifan.ebillcenter.MvRxViewModel
 
 class EBillEpoxyController(

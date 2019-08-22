@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/nav_graph" app:startDestination="@id/billListFragment">
+    <fragment android:id="@+id/billListFragment" android:name="com.yifan.ebillcenter.ui.BillListFragment"
+              android:label="BillListFragment">
+        <action android:id="@+id/action_billListFragment_to_editItemFragment" app:destination="@id/editItemFragment"/>
+    </fragment>
+    <fragment android:id="@+id/editItemFragment" android:name="com.yifan.ebillcenter.ui.EditItemFragment"
+              android:label="EditItemFragment"/>
+</navigation>
