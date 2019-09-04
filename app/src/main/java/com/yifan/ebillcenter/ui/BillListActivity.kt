@@ -1,9 +1,8 @@
-package com.yifan.ebillcenter
+package com.yifan.ebillcenter.ui
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import com.airbnb.mvrx.BaseMvRxActivity
-import com.yifan.ebillcenter.ui.BillListFragment
+import com.yifan.ebillcenter.R
 
 class BillListActivity : BaseMvRxActivity() {
 

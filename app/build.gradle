@@ -54,7 +54,11 @@ dependencies {
     implementation 'com.airbnb.android:mvrx:1.0.2'
     implementation 'com.airbnb.android:epoxy:3.7.0'
     implementation 'com.squareup.moshi:moshi:1.8.0'
+    implementation("com.squareup.moshi:moshi-kotlin:1.8.0")
+    kapt("com.squareup.moshi:moshi-kotlin-codegen:1.8.0")
+
     implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+
 
     kapt 'com.airbnb.android:epoxy-processor:3.7.0'
     api "io.reactivex.rxjava2:rxjava:2.2.8"
@@ -65,5 +69,10 @@ dependencies {
 
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    debugImplementation 'com.facebook.flipper:flipper:0.23.5'
+    debugImplementation 'com.facebook.soloader:soloader:0.5.1'
+
+    releaseImplementation 'com.facebook.flipper:flipper-noop:0.23.5'
 
 }

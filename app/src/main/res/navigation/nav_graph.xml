@@ -4,8 +4,14 @@
             android:id="@+id/nav_graph" app:startDestination="@id/billListFragment">
     <fragment android:id="@+id/billListFragment" android:name="com.yifan.ebillcenter.ui.BillListFragment"
               android:label="BillListFragment">
-        <action android:id="@+id/action_billListFragment_to_editItemFragment" app:destination="@id/editItemFragment"/>
+        <!--        <action android:id="@+id/action_billListFragment_to_editItemFragment" app:destination="@id/editItemFragment"/>-->
+        <action android:id="@+id/action_billListFragment_to_serviceSearchFragment"
+                app:destination="@id/serviceSearchFragment"/>
+
     </fragment>
     <fragment android:id="@+id/editItemFragment" android:name="com.yifan.ebillcenter.ui.EditItemFragment"
               android:label="EditItemFragment"/>
+    <fragment android:id="@+id/serviceSearchFragment" android:name="com.yifan.ebillcenter.ui.ServiceSearchFragment"
+              android:label="ServiceSearchFragment"/>
+
 </navigation>

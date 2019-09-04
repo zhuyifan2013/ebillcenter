@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">ebillcenter</string>
+    <string name="search_hint">Search digital service</string>
     <string name="action_settings">Settings</string>
 </resources>

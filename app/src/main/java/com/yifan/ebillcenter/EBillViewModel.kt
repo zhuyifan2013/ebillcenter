@@ -1,16 +1,13 @@
 package com.yifan.ebillcenter
 
+import android.annotation.SuppressLint
 import android.util.Log
-import com.airbnb.mvrx.BaseMvRxViewModel
 import com.airbnb.mvrx.MvRxState
-import com.airbnb.mvrx.Success
-import com.yifan.ebillcenter.data.BillItem
-import com.yifan.ebillcenter.data.DBDataSource
-import com.yifan.ebillcenter.data.EBillDatabase
-import io.reactivex.Observable
+import com.yifan.ebillcenter.data.ServiceItem
 
 data class BillListState(
-        val billList: MutableList<BillItem> = emptyList<BillItem>().toMutableList()
+        val serviceList: MutableList<ServiceItem> = emptyList<ServiceItem>().toMutableList(),
+        val searchResult: MutableList<ServiceItem> = emptyList<ServiceItem>().toMutableList()
 ) : MvRxState
 
 class EBillViewModel(initialState: BillListState) : MvRxViewModel<BillListState>(initialState) {
@@ -24,15 +21,21 @@ class EBillViewModel(initialState: BillListState) : MvRxViewModel<BillListState>
                 .doOnNext {
                     Log.d("Yifan", "it : $it");
                 }.execute {
-                    copy(billList = it()?.toMutableList() ?: billList)
+                    copy(serviceList = it()?.toMutableList() ?: serviceList)
                 }
     }
 
-    fun addEBillItem(billItem: BillItem) {
+    fun addEBillItem(serviceItem: ServiceItem) {
         setState {
-            copy(billList = (billList + billItem).toMutableList())
+            copy(serviceList = (serviceList + serviceItem).toMutableList())
         }
-        MyApplication.getDBDataSource()?.addEBillItem(billItem)
+        MyApplication.getDBDataSource()?.addEBillItem(serviceItem)
+    }
+
+    @SuppressLint("CheckResult")
+    fun searchService(query: String) {
+        MyApplication.getDBDataSource()?.searchService(query)
+                ?.subscribe({ Log.d("Yifan", "Result : $it") }, { Log.d("Yifan", "Error : $it"); })
     }
 
 }

@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "items":[
+    {
+      "service_id":1,
+      "service_name":"网易云音乐",
+      "service_price": "30",
+      "price_period": 1,
+      "service_icon": ""
+    },
+    {
+      "service_id":2,
+      "service_name":"Apple Music",
+      "service_price": "15",
+      "price_period": 2,
+      "service_icon": ""
+    },
+    {
+      "service_id":3,
+      "service_name":"Youtube",
+      "service_price": "18",
+      "price_period": 1,
+      "service_icon": ""
+    },
+    {
+      "service_id":4,
+      "service_name":"Netflix",
+      "service_price": "30",
+      "price_period": 1,
+      "service_icon": ""
+    }
+  ]
+}
